@@ -13,9 +13,11 @@ cf.go_offline()
 
 dataframe = pd.read_csv("/home/muhammad/Envs/tweet/code/datetime_data.csv")
 
+# print(dataframe.head())
+
 trace0 = go.Scatter(
-	x = list(Counter(sorted(dataframe["day_of_week"])).keys()),
-	y = list(Counter(sorted(dataframe["day_of_week"])).values()),
+	x = list(Counter(sorted(dataframe["hours"])).keys()),
+	y = list(Counter(sorted(dataframe["hours"])).values()),
 	mode = 'lines + markers',
 )
 
@@ -29,3 +31,51 @@ group_labels = ['distplot']
 
 fig = ff.create_distplot(hist_data, group_labels)
 # py.plot(fig, filename='Basic_Distplot.html')
+
+monday = dataframe[dataframe["day_of_week"] == 1]
+tuesday = dataframe[dataframe["day_of_week"] == 2]
+wednesday = dataframe[dataframe["day_of_week"] == 3]
+thursday = dataframe[dataframe["day_of_week"] == 4]
+friday = dataframe[dataframe["day_of_week"] == 5]
+saturday = dataframe[dataframe["day_of_week"] == 6]
+sunday = dataframe[dataframe["day_of_week"] == 7]
+
+Monday = go.Scatter(
+	# x = list(Counter(sorted(monday["hours"])).keys()),
+	y = list(Counter(sorted(monday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Tuesday = go.Scatter(
+	x = list(Counter(sorted(tuesday["hours"])).keys()),
+	y = list(Counter(sorted(tuesday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Wednesday = go.Scatter(
+	x = list(Counter(sorted(wednesday["hours"])).keys()),
+	y = list(Counter(sorted(wednesday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Thursday = go.Scatter(
+	x = list(Counter(sorted(thursday["hours"])).keys()),
+	y = list(Counter(sorted(thursday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Friday = go.Scatter(
+	x = list(Counter(sorted(friday["hours"])).keys()),
+	y = list(Counter(sorted(friday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Saturday = go.Scatter(
+	x = list(Counter(sorted(saturday["hours"])).keys()),
+	y = list(Counter(sorted(saturday["hours"])).values()),
+	mode = 'lines + markers',
+)
+Sunday = go.Scatter(
+	x = list(Counter(sorted(sunday["hours"])).keys()),
+	y = list(Counter(sorted(sunday["hours"])).values()),
+	mode = 'lines + markers',
+)
+
+data = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
+
+# py.plot(data, filename='basic-line.html')
