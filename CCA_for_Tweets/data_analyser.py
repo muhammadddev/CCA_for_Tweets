@@ -23,14 +23,7 @@ trace0 = go.Scatter(
 
 data = [trace0]
 
-py.plot(data, filename='basic-line.html')
-
-x = list(Counter(sorted(dataframe["hours"])).values())
-hist_data = [x]
-group_labels = ['distplot']
-
-fig = ff.create_distplot(hist_data, group_labels)
-# py.plot(fig, filename='Basic_Distplot.html')
+# py.plot(data, filename='basic-line.html')
 
 monday = dataframe[dataframe["day_of_week"] == 1]
 tuesday = dataframe[dataframe["day_of_week"] == 2]
@@ -41,39 +34,46 @@ saturday = dataframe[dataframe["day_of_week"] == 6]
 sunday = dataframe[dataframe["day_of_week"] == 7]
 
 Monday = go.Scatter(
-	# x = list(Counter(sorted(monday["hours"])).keys()),
+	x = list(Counter(sorted(monday["hours"])).keys()),
 	y = list(Counter(sorted(monday["hours"])).values()),
 	mode = 'lines + markers',
+	name= 'Monday'
 )
 Tuesday = go.Scatter(
 	x = list(Counter(sorted(tuesday["hours"])).keys()),
 	y = list(Counter(sorted(tuesday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Tuesday'
 )
 Wednesday = go.Scatter(
 	x = list(Counter(sorted(wednesday["hours"])).keys()),
 	y = list(Counter(sorted(wednesday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Wednesday'
 )
 Thursday = go.Scatter(
 	x = list(Counter(sorted(thursday["hours"])).keys()),
 	y = list(Counter(sorted(thursday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Thursday'
 )
 Friday = go.Scatter(
 	x = list(Counter(sorted(friday["hours"])).keys()),
 	y = list(Counter(sorted(friday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Friday'
 )
 Saturday = go.Scatter(
 	x = list(Counter(sorted(saturday["hours"])).keys()),
 	y = list(Counter(sorted(saturday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Saturday'
 )
 Sunday = go.Scatter(
 	x = list(Counter(sorted(sunday["hours"])).keys()),
 	y = list(Counter(sorted(sunday["hours"])).values()),
 	mode = 'lines + markers',
+	name = 'Sunday'
 )
 
 data = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
