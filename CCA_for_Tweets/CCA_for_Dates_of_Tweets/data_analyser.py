@@ -11,7 +11,7 @@ from collections import Counter
 py.init_notebook_mode(connected=True)
 cf.go_offline()
 
-dataframe = pd.read_csv("/home/muhammad/Envs/tweet/code/datetime_data.csv")
+dataframe = pd.read_csv("/home/muhammad/Envs/tweet/code/CCA_for_Tweets/CCA_for_Dates_of_Tweets/created_datas/datetime_data.csv")
 
 # print(dataframe.head())
 
