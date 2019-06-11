@@ -2,7 +2,7 @@ import datetime
 
 import pandas as pd
 
-data = open("dates.txt", "r", encoding="utf-8")
+data = open("/home/muhammad/Envs/tweet/code/CCA_for_Tweets/CCA_for_Dates_of_Twee/created_datas/dates.txt", "r", encoding="utf-8")
 data = data.read()
 # print(data)
 
@@ -63,4 +63,4 @@ for date in dataframe["dates"]:
 
 dataframe["day_of_week"] = days_of_week
 
-dataframe.to_csv('datetime_data.csv', encoding='utf-8')
+dataframe.to_csv('/home/muhammad/Envs/tweet/code/CCA_for_Tweets/CCA_for_Dates_of_Tweets/created_datas/datetime_data.csv', encoding='utf-8')
